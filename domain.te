@@ -156,6 +156,7 @@ neverallow {
   domain
   -su
   -debuggerd
+  -init
   -vold
   -dumpstate
   -system_server
