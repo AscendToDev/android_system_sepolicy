@@ -466,7 +466,7 @@ neverallow { domain -su } self:process { execstack execheap };
 ifelse(target_needs_platform_text_relocations, `true',
  `neverallow { domain -appdomain -mediaserver -cameraserver } file_type:file execmod;'
 ,
- `neverallow { domain -untrusted_app } file_type:file execmod;'
+ `neverallow { domain -untrusted_app -untrusted_base_app } file_type:file execmod;'
 )
 
 neverallow { domain -su -init } proc:{ file dir } mounton;
