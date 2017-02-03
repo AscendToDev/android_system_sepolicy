@@ -46,6 +46,10 @@ allow audioserver audioserver_tmpfs:file { read write execute };
 # but seems appropriate for all devices.
 unix_socket_connect(audioserver, bluetooth, bluetooth)
 
+# Ascend Audio
+allow audioserver activity_service:service_manager find;
+set_prop(audioserver, dolby_prop)
+
 ###
 ### neverallow rules
 ###
